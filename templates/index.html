@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonar-server {{version}}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename ='css/main.css')}}" />
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Measure</a>
+        <a href="/about"><i class="fa fa-fw fa-search"></i> About</a>
+    </div>
+    <h2 class="center">Sonar-server {{version}}</h2>
+    <div class="content">
+
+
+        <table class="table_sonar">
+            <tbody id="table_body">
+                {%for data_key, data_value in sonar_data.items()%}
+                <tr>
+                    <td>{{data_key}}</td>
+                    <td>{{data_value}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <span>Update time: <span id="update-time">{{update_time}}</span></span>
+    </div>
+
+</body>
+
+</html>
