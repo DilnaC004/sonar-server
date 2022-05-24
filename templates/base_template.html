@@ -5,26 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename ='img/favicon.ico')}}">
     <title>Sonar-server {{version}}</title>
-    <link rel="stylesheet" href="{{url_for('static',filename ='css/main.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
+    <script src="{{url_for('static', filename='js/jquery-min.js')}}"></script>
 </head>
 
 <body>
     <div class="navbar">
-        <a class="{{url_for(request.endpoint) |is_active('/test') }}" href="/"><i class="fa fa-fw fa-home"></i>
+        <a class="{{url_for(request.endpoint) |is_active('/') }}" href="/"><i class="fa fa-fw fa-home"></i>
             Measure</a>
         <a class="{{url_for(request.endpoint) |is_active('/about') }}" href="/about"><i class="fa fa-fw fa-search"></i>
             About</a>
     </div>
     <h2 class="center">Sonar-server {{version}}</h2>
     <div class="content">
-        {{url_for(request.endpoint)}}
         {% block content %}
 
         {% endblock %}
     </div>
 
 </body>
+
+{% block scripts %}
+
+{% endblock %}
 
 </html>

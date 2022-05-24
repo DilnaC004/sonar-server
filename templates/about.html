@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base_template.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonar-server {{version}}</title>
-    <link rel="stylesheet" href="{{url_for('static',filename ='css/main.css')}}" />
-</head>
+{% block content %}
+<H3 class="center"> About application</H3>
+<hr>
 
-<body>
-    <div class="navbar">
-        <a class="" href="/"><i class="fa fa-fw fa-home"></i> Measure</a>
-        <a class="active" href="/about"><i class="fa fa-fw fa-search"></i> About</a>
+<div class="information">
+    <img class="max-width" src="{{url_for('static',filename ='img/sonar.png')}}" alt="information-picture">
+
+    {{ lipsum(n=3, html=True, min=50, max=100) }}
+
+    <div class="bottom">
+        <br>
+        <H4 class="">Authors:</H4>
+        <strong>
+            <br>
+            <ul>
+                <li>Ing. David Zahradník</li>
+                <li>Ing. Štěpán Hodík</li>
+            </ul>
+
+            @CTU 2022
+        </strong>
     </div>
-    <h2 class="center">Sonar-server {{version}}</h2>
-    <div class="content">
-
-        <H2 class="center"> About application</H2>
-
-    </div>
-
-</body>
-
-</html>
+</div>
+{% endblock %}

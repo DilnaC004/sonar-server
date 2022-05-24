@@ -1,3 +1,6 @@
 curl --header "Content-Type: application/json" --request POST  --data '{"username":"xyz","password":"xyz"}' http://127.0.0.1:5000/put_data
 
 curl -i -H "Content-Type: application/json" charset=utf-8 -X POST --data '{\"username\":\"xyz\",\"password\":\"xyz\"}' http://127.0.0.1:5000/put_data
+
+## cron - virtualenv example
+https://stackoverflow.com/questions/3287038/cron-and-virtualenv
