@@ -21,5 +21,5 @@ Automatické spustění serveru a průběžná kontrola jeho běhu
 crontab -e
 
 #vložení řádku - testování běhu skriptu každou minutu
-*/1 * * * * pgrep SonarServer > /dev/null || cd ~/Repos/sonar-server && source venv/bin/activate && flask run
+*/1 * * * * pgrep SonarServer > /dev/null || cd ~/Repos/sonar-server && source venv/bin/activate && python3 app.py
 ```
