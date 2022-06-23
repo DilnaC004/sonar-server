@@ -34,5 +34,5 @@ def send_random_data(url: str):
 if __name__ == "__main__":
 
     while True:
-        send_random_data("http://127.0.0.1:5000/send_data")
+        send_random_data("http://127.0.0.1:5050/send_data")
         time.sleep(1)

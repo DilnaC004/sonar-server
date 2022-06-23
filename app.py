@@ -1,5 +1,5 @@
 import os
-import setproctitle
+#import setproctitle
 
 from datetime import datetime
 from jinja2.filters import FILTERS
@@ -8,7 +8,7 @@ from helpers import get_time_str, is_active, SonarData
 
 
 VERSION = "0.0.1"
-setproctitle.setproctitle("SonarServer")
+# setproctitle.setproctitle("SonarServer")
 
 app = Flask(__name__)
 
@@ -52,11 +52,21 @@ def about():
     return render_template("about.html", version=VERSION)
 
 
+@app.route("/map")
+def map():
+    return render_template("map.html", version=VERSION)
+
+
+@app.route("/settings")
+def setting():
+    return render_template("settings.html", version=VERSION)
+
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, "static", "img"),
                                "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 
-if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5050)

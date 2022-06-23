@@ -19,11 +19,11 @@
 </table>
 
 <br>
-<span>Last valid data: <span id="update-time">{{update_time}}</span></span>
+<span>Last valid data: <span id="update-time">{{update_time}}</span> (UTC)</span>
 {% endblock %}
 
 {% block scripts %}
 
-<script src="{{url_for('static',filename='js/index.js')}}"></script>
+<script src="{{url_for('static',filename='js/measure.js')}}"></script>
 
 {% endblock %}

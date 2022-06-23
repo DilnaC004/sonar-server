@@ -8,12 +8,23 @@
     <title>Sonar-server {{version}}</title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
     <script src="{{url_for('static', filename='js/jquery-min.js')}}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 </head>
 
 <body>
     <div class="navbar">
         <a class="{{url_for(request.endpoint) |is_active('/') }}" href="/"><i class="fa fa-fw fa-home"></i>
             Measure</a>
+        <a class="{{url_for(request.endpoint) |is_active('/map') }}" href="/map"><i class="fa fa-fw fa-search"></i>
+            Map</a>
+        <a class="{{url_for(request.endpoint) |is_active('/settings') }}" href="/settings"><i
+                class="fa fa-fw fa-search"></i>
+            Settings</a>
         <a class="{{url_for(request.endpoint) |is_active('/about') }}" href="/about"><i class="fa fa-fw fa-search"></i>
             About</a>
     </div>
